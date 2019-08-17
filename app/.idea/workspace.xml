@@ -69,37 +69,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5ba48da-6fa9-4e7a-bbe7-6e5c88d68ef8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_rc01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_rc01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_selection_1_1_0_alpha06_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/Post.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/RvAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/dummy/DummyContent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/adapter_item_layout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_alpha02_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_alpha03_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_1_0_0_alpha02_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_alpha05_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_rc01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha03_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_alpha06_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_alpha02_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_rc01_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/assets/garages.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/assets/garages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/CustomAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/CustomAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/Garage_Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/Garage_Model.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/LoginFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/LoginFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/parkut/Model.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/parkut/RvAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/adapter_item_layout.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/user.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,22 +111,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+            <state relative-caret-position="112">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/RvAdapter.kt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+            <state relative-caret-position="24">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -236,11 +209,11 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/adapter_item_layout.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/parkut/Post.kt" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/parkut/Garage_Model.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/parkut/CustomAdapter.kt" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/parkut/RvAdapter.kt" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml" />
       </list>
     </option>
   </component>
@@ -272,6 +245,17 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="parkut" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="app" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -402,7 +386,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50476193" side_tool="true" weight="0.25182188" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4952381" visible="true" weight="0.25182188" />
@@ -416,11 +399,11 @@
       <window_info anchor="bottom" id="Run" order="0" weight="0.3285968" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.07637656" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3285968" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.44049734" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44049734" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3285968" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.3285968" />
       <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.3285968" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -505,12 +488,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="78" />
@@ -520,24 +497,6 @@
           <line>49</line>
           <properties />
           <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>45</line>
-          <properties />
-          <option name="timeStamp" value="85" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -719,27 +678,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/Garage_Model.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/user.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -763,6 +707,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="19" column="41" lean-forward="true" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/listing_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
