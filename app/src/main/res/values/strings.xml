@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Park at UT</string>
+    <string name="hint_username">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirmpassword">Confirm Password</string>
+    <string name="button_login">Login</string>
+    <string name="add_user">Register</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="error_password">Password must contain at least 1 character.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
