@@ -42,19 +42,22 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
             val inflater = context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.user, null, true)
-
-            holder.name = convertView!!.findViewById(R.id.name) as TextView
             holder.address = convertView.findViewById(R.id.address) as TextView
+            holder.id = convertView!!.findViewById(R.id.id) as TextView
+            holder.name = convertView!!.findViewById(R.id.name) as TextView
+
+            holder.spot = convertView.findViewById(R.id.spots) as TextView
 
             convertView.tag = holder
         } else {
             // the getTag returns the viewHolder object set as a tag to the view
             holder = convertView.tag as ViewHolder
         }
+        holder.address!!.text = "Address :" + usersModelArrayList[position].getAddresses()
+        holder.id!!.text = "Garage Id :" + usersModelArrayList[position].getIds()
+        holder.name!!.text ="Garage Name :" +usersModelArrayList[position].getNames()
 
-        holder.name!!.text = "Name: " + usersModelArrayList[position].getNames()
-        holder.address!!.text = "Address: " + usersModelArrayList[position].getAddresses()
-
+        holder.spot!!.text ="Spots :"+  usersModelArrayList[position].getSpotss()
         return convertView
     }
 
@@ -62,6 +65,8 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
 
         var name: TextView? = null
         var address: TextView? = null
+        var id: TextView? = null
+        var spot: TextView? = null
     }
 
 }

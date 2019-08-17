@@ -30,6 +30,26 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:paddingLeft="10dp"
                 android:text="Address" />
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingLeft="10dp"
+            android:text="Id" />
+        <TextView
+            android:id="@+id/spots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:gravity="center_vertical"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:paddingLeft="10dp"
+            android:text="Spots" />
+
+
     </LinearLayout>
 
 

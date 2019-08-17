@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.listing_fragment.view.*
 import okhttp3.*
 import org.jetbrains.anko.doAsync
@@ -28,32 +29,34 @@ class ListingFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.listing_fragment, container, false)
+        userlist = view.userlist
+        doAsync {
+            fetchdetails()
 
-
+        }
 
         view.done.setOnClickListener {
-            doAsync {
-                fetchdetails()
-            }
+            userlist = view.userlist
+            var jsonResponse = loadJSONFromAssets()
+            userModelArrayList = getInfo(jsonResponse!!)
 
-                //val jsonarray = JSONArray(gotresponse)
-                //iterate through the returned array of JSON objects
-                // and look for candiadate whose name we requested
-               // for (i in 0..(jsonarray.length() - 1)) {
-              //      val user = jsonarray.getJSONObject(i)
-              //  }
+            // Create a Custom Adapter that gives us a way to "view" each user in the ArrayList
+            customAdapter = CustomAdapter(view.context, userModelArrayList!!)
+            // set the custom adapter for the userlist viewing
+            userlist!!.adapter = customAdapter
 
 
         }
-        view.register1.setOnClickListener({
-
-            // Navigate to the next Fragment.
-            (activity as NavigationHost).navigateTo(RegisterFragment(), false)
-
-        })
-
-
         return view;
+//        view.register1.setOnClickListener({
+//
+//            // Navigate to the next Fragment.
+//            (activity as NavigationHost).navigateTo(RegisterFragment(), false)
+//
+//        })
+
+
+
     }
 
     private fun getInfo(response: String): ArrayList<Garage_Model> {
@@ -63,8 +66,12 @@ class ListingFragment : Fragment() {
             for (i in 0 until dataArray.length()) {
                 val usersModel = Garage_Model()
                 val dataobj = dataArray.getJSONObject(i)
-                usersModel.setNames(dataobj.getString("email"))
                 usersModel.setAddresses(dataobj.getString("address"))
+                usersModel.setIds(dataobj.getString("id"))
+                usersModel.setNames(dataobj.getString("name"))
+
+                usersModel.setSpotss(dataobj.getString("spots"))
+
                 userModelArrayList.add(usersModel)
             }
         } catch (e: JSONException) {
@@ -81,6 +88,7 @@ class ListingFragment : Fragment() {
     private fun activityUiThread(function: () -> Unit) {
 
     }
+
 
     fun loadJSONFromAssets(): String? {
         var json: String? = null
@@ -113,20 +121,8 @@ val status = response.code()
 //                            println("Request Successful!!")
 //                            println(json)
             // val responseObject = json.getJSONObject("response")
-            for (i in 0..(json.length() - 1)) {
-                val user = json.getJSONObject(i)
-                val userModelArrayList = ArrayList<Garage_Model>()
-                 println(user)
-
-//                val usersModel = Garage_Model()
-//
-//                usersModel.setNames(user.getString("email"))
-//                usersModel.setAddresses(user.getString("address"))
-//                userModelArrayList.add(usersModel)
-            }
-            //val docs = json.getJSONArray(i)
-            this@ListingFragment.fetchComplete()
-
+//            for (i in 0..(json.length() - 1)) {
+   //(activity as NavigationHost).navigateTo(RegisterFragment(), false)
         }
 
         override fun onFailure(call: Call?, e: IOException?) {
@@ -136,7 +132,6 @@ val status = response.code()
     })
 
     //private fun runOnUiThread(functionset: () -> Unit) {
-
 }
 }
 

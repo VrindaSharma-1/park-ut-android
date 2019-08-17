@@ -1,10 +1,1 @@
-[
-  {
-    "name": "Conference Center Garage (CCG)",
-    "address": "1900 University Ave. - Rm LL014"
-  },
-  {
-    "name": "Brazos Garages (BRG)",
-    "address": "210 E. MLK Blvd."
-  }
-]
+[{"address":"210 E. MLK Blvd.","id":4,"name":"Brazos Garages (BRG)","spots":[{"garage_id":4,"id":19,"location":"A001"},{"garage_id":4,"id":20,"location":"B010"},{"garage_id":4,"id":21,"location":"C100"}]},{"address":"1900 University Ave. - Rm LL014","id":5,"name":"Conference Center Garage (CCG)","spots":[{"garage_id":5,"id":22,"location":"A200"},{"garage_id":5,"id":23,"location":"B020"},{"garage_id":5,"id":24,"location":"C002"}]},{"address":"1200 E Martin Luther King Jr. Blvd.","id":7,"name":"East Campus Garage (ECG)","spots":[{"garage_id":7,"id":25,"location":"A030"},{"garage_id":7,"id":26,"location":"B300"},{"garage_id":7,"id":27,"location":"C003"}]},{"address":"1601 Trinity Street","id":8,"name":"Health Center Garage (HCG)","spots":[{"garage_id":8,"id":30,"location":"X358"}]},{"address":"2017 Robert Dedman Dr","id":9,"name":"Manor Garage (MAG)","spots":[{"garage_id":9,"id":32,"location":"D204"}]},{"address":"1815 Trinity St","id":10,"name":"Trinity Garage (TRG)","spots":[{"garage_id":10,"id":31,"location":"G935"}]},{"address":"105 E. 27th Street","id":11,"name":"Speedway Garage (SWG)","spots":[{"garage_id":11,"id":35,"location":"E264"}]},{"address":"2420 San Antonio Street","id":12,"name":"San Antonio Garage (SAG)","spots":[{"garage_id":12,"id":34,"location":"K875"}]},{"address":"1616 Guadalupe St.","id":13,"name":"Guadalupe Garage (GUG)","spots":[{"garage_id":13,"id":33,"location":"F739"}]},{"address":"300 W Martin Luther King Jr Blvd","id":14,"name":"Rowling Hall Garage (RHG)","spots":[{"garage_id":14,"id":36,"location":"R893"}]}]

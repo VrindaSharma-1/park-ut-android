@@ -82,9 +82,7 @@ class LoginFragment() : Fragment() {
 
     }
 
-    // "isPasswordValid"  method goes here
-    // Currently checks for 8 characters but we could perform
-    // an actual validation with a remote service like the Web version below
+
     private fun isPasswordValid(text: Editable?): Boolean {
         return text != null && text.length >= 1
     }
