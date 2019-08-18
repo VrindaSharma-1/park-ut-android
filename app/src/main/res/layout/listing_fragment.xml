@@ -7,7 +7,7 @@
               android:orientation="vertical">
 
     <Button
-            android:text="Done"
+            android:text="Show Garages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/done"
@@ -16,11 +16,8 @@
             android:background="@color/colorAccent"
     />
 
-    <Button
-            android:text="Register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/register1"/>
-    <TextView
+
+     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -30,9 +27,34 @@
             android:text="Garages"/>
 
 
+    <EditText
+        android:id="@+id/garage_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textAlignment="center"
+
+        android:inputType="number"
+        android:hint = "@string/hint_garage_id"/>
+
+
+    <Button
+        android:id="@+id/reserve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reserve" />
+
+    <Button
+        android:id="@+id/occupy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Occupy" />
 
     <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/userlist"/>
+            android:id="@+id/userlist"
+
+
+        />
 </LinearLayout>

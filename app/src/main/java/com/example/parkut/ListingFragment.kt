@@ -5,15 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_occupy.view.*
+import kotlinx.android.synthetic.main.listing_fragment.*
 import kotlinx.android.synthetic.main.listing_fragment.view.*
+import kotlinx.android.synthetic.main.listing_fragment.view.garage_id
 import okhttp3.*
+import org.jetbrains.anko.AnkoAsyncContext
 import org.jetbrains.anko.doAsync
 import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 import java.io.IOException
 import java.util.*
+import java.util.logging.Logger.global
 
 class ListingFragment : Fragment() {
     private val jsoncode = 1
@@ -25,13 +33,41 @@ class ListingFragment : Fragment() {
     private var userModelArrayList: ArrayList<Garage_Model>? = null
     private var customAdapter: CustomAdapter? = null
 
+    companion object one{
+        fun newInstance(position: String):ListingFragment {
+            val fragment = ListingFragment()
+            val args = Bundle()
+           var user_id = args.putString("position", position)
+            fragment.setArguments(args)
+            return fragment
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.listing_fragment, container, false)
         userlist = view.userlist
+        val args=arguments
+val user_id = args?.getString("position","position").toString()
         doAsync {
-            fetchdetails()
+            fetchdetails(user_id)
+
+        }
+        view.reserve.setOnClickListener{
+           doAsync {  reserve() }
+
+
+            // Navigate to the next Fragment.
+            // (activity as NavigationHost).navigateTo(RegisterFragment(), false)
+
+        }
+
+        view.occupy.setOnClickListener{
+            doAsync {  occupy() }
+
+            // Navigate to the next Fragment.
+            // (activity as NavigationHost).navigateTo(RegisterFragment(), false)
 
         }
 
@@ -48,12 +84,7 @@ class ListingFragment : Fragment() {
 
         }
         return view;
-//        view.register1.setOnClickListener({
-//
-//            // Navigate to the next Fragment.
-//            (activity as NavigationHost).navigateTo(RegisterFragment(), false)
-//
-//        })
+
 
 
 
@@ -107,10 +138,12 @@ class ListingFragment : Fragment() {
         return json
     }
 
-private fun fetchdetails() {
+private fun fetchdetails(user_id:String) {
+
+println(user_id)
     var client = OkHttpClient()
     var request = OkHttpRequest(client)
-    val URL1 = "https://park-ut.appspot.com/details?user_id=1"
+    val URL1 = "https://park-ut.appspot.com/details?user_id=$user_id"
 
     request.GET(URL1, object : Callback {
 
@@ -133,6 +166,85 @@ val status = response.code()
 
     //private fun runOnUiThread(functionset: () -> Unit) {
 }
+
+
+    private fun reserve()
+    {
+        val args=arguments
+        val user_id = args?.getString("position","position").toString()
+        val garage_id = garage_id.text
+        val client = OkHttpClient()
+        val request = OkHttpRequest(client)
+        val map: HashMap<String, String> = hashMapOf("garage_id" to "$garage_id")
+        val url = "https://park-ut.appspot.com/reserve/$garage_id?user_id=$user_id"
+        val post = request.POST(
+                url,
+                map,
+                object : Callback {
+                    override fun onResponse(call: Call?, response: Response) {
+
+                    }
+
+
+
+                    override fun onFailure(call: Call?, e: IOException?) {
+                        println("Request Failure.")
+                    }
+                })
+
+     //  (activity as NavigationHost).navigateTo(OccupyFragment(), false)
+        fun fetchComplete() {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        fun runOnUiThread(function: () -> Unit) {
+
+        }
+
+        fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
+
+        }
+
+    }
+    private fun occupy()
+    {
+        val client = OkHttpClient()
+        val request = OkHttpRequest(client)
+        val map: HashMap<String, String> = hashMapOf("user_id" to "1")
+        val url = "https://park-ut.appspot.com/occupy/?user_id=1"
+        val post = request.POST(
+                url,
+                map,
+                object : Callback {
+                    override fun onResponse(call: Call?, response: Response) {
+
+                        //(activity as NavigationHost).navigateTo(LogoutFragment(), false)
+
+                    }
+
+                    override fun onFailure(call: Call?, e: IOException?) {
+                        println("Request Failure.")
+                    }
+                })
+
+        fun fetchComplete() {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        fun runOnUiThread(function: () -> Unit) {
+
+        }
+
+        fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
+
+        }
+
+    }
+
+
+
+
+
 }
 
 

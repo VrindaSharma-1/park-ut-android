@@ -29,7 +29,7 @@ class LoginFragment() : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         // Set an error if the password is less than 8 characters.
-        view.login_button.setOnClickListener({
+        view.login_button.setOnClickListener{
             if (!isPasswordValid(password_edit_text.text!!)) {
                 password_text_input.error = getString(R.string.error_password)
             }
@@ -37,42 +37,32 @@ class LoginFragment() : Fragment() {
             {
                 doAsync {
                     fetchpost()
-//                    val jsonarray = JSONArray(gotresponse)
-//                    activityUiThread {
-//                        //iterate through the returned array of JSON objects
-//                        // and look for candiadate whose name we requested
-//                        for (i in 0..(jsonarray.length() - 1)) {
-//                            val user = jsonarray.getJSONObject(i)
-//                            if(user.get("email").toString().equals("admin")) {
-//                                (activity as NavigationHost).navigateTo(ListingFragment(), false)
-//                            }
-//                        }
-//                    }
+
                 }
             }
            // (activity as NavigationHost).navigateTo(ListingFragment(), false)
 
-        })
+        }
         // Clear the error once more than 8 characters are typed.
-        view.password_edit_text.setOnKeyListener({ _, _, _ ->
+        view.password_edit_text.setOnKeyListener{ _, _, _ ->
             if (isPasswordValid(password_edit_text.text!!)) {
                 // Clear the error.
                 password_text_input.error = null
             }
             false
-        })
+        }
 
-        view.register.setOnClickListener({
+        view.register.setOnClickListener{
             // Navigate to the Registration Fragment.
             (activity as NavigationHost).navigateTo(RegisterFragment(), false)
 
-        })
+        }
 
-        view.cancel_button.setOnClickListener({
+        view.cancel_button.setOnClickListener{
             // Navigate to the Registration Fragment.
             (activity as NavigationHost).navigateTo(LoginFragment(), false)
 
-        })
+        }
 
 
         return view
@@ -96,10 +86,12 @@ class LoginFragment() : Fragment() {
 
     private fun fetchpost()
     {
+        val email = email_text.text
+        val password = password_edit_text.text
         val client = OkHttpClient()
         val request = OkHttpRequest(client)
-        val map: HashMap<String, String> = hashMapOf("email" to "admin", "password" to "p")
-        val url = "https://park-ut.appspot.com/auth?email=admin&password=p"
+        val map: HashMap<String, String> = hashMapOf("email" to "$email", "password" to "$password")
+        val url = "https://park-ut.appspot.com/auth?email=$email&password=$password"
         val post = request.POST(
                 url,
                 map,
@@ -107,8 +99,9 @@ class LoginFragment() : Fragment() {
                     override fun onResponse(call: Call?, response: Response) {
                         val responseData = response.body()?.string()
                         val jsonarray = JSONObject(responseData)
-                        if(jsonarray.get("email")=="admin")
-                        {(activity as NavigationHost).navigateTo(ListingFragment(), false)}
+                        val user_id = jsonarray.get("id").toString()
+                        if(jsonarray.get("email")=="$email")
+                        {(activity as NavigationHost).navigateTo(ListingFragment.newInstance(user_id), false)}
 
                     }
 
