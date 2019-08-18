@@ -1,35 +1,31 @@
 package com.example.parkut
 
+
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import android.widget.Toast
-import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.fragment_occupy.view.*
+
 import kotlinx.android.synthetic.main.listing_fragment.*
 import kotlinx.android.synthetic.main.listing_fragment.view.*
-import kotlinx.android.synthetic.main.listing_fragment.view.garage_id
+import kotlinx.android.synthetic.main.user.*
 import okhttp3.*
 import org.jetbrains.anko.AnkoAsyncContext
 import org.jetbrains.anko.doAsync
 import org.json.JSONArray
 import org.json.JSONException
-import org.json.JSONObject
 import java.io.IOException
 import java.util.*
-import java.util.logging.Logger.global
 
 class ListingFragment : Fragment() {
-    private val jsoncode = 1
 
-    private var response: String? = null
+
+
     private var userlist: ListView? = null
-    private var log_out: View? = null
-    private var userArrayList: ArrayList<String>? = null
     private var userModelArrayList: ArrayList<Garage_Model>? = null
     private var customAdapter: CustomAdapter? = null
 
@@ -43,44 +39,40 @@ class ListingFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.listing_fragment, container, false)
         userlist = view.userlist
+
         val args=arguments
-val user_id = args?.getString("position","position").toString()
+        val user_id = args?.getString("position","position").toString()
         doAsync {
             fetchdetails(user_id)
 
         }
+
         view.reserve.setOnClickListener{
            doAsync {  reserve() }
-
-
-            // Navigate to the next Fragment.
-            // (activity as NavigationHost).navigateTo(RegisterFragment(), false)
-
+            val g_id= garage_id.text
+                    context?.let { it1 -> "Reserved spot at Garage - $g_id ".toast(it1) }
         }
 
         view.occupy.setOnClickListener{
-            doAsync {  occupy() }
-
-            // Navigate to the next Fragment.
-            // (activity as NavigationHost).navigateTo(RegisterFragment(), false)
-
+            doAsync {  occupy()}
+            val g_id= garage_id.text
+            context?.let { it1 -> "Occupied spot at Garage - $g_id ".toast(it1) }
         }
+
         view.logout.setOnClickListener{
 
-
-            // Navigate to the next Fragment.
+            context?.let { it1 -> "Logged Out!".toast(it1) }
             (activity as NavigationHost).navigateTo(LoginFragment(), false)
-
         }
         view.checkout.setOnClickListener{
-
             doAsync {  checkout() }
-
+            context?.let { it1 -> "Checked Out! See You Again!!".toast(it1) }
         }
         view.done.setOnClickListener {
             userlist = view.userlist
@@ -105,14 +97,15 @@ val user_id = args?.getString("position","position").toString()
         val userModelArrayList = ArrayList<Garage_Model>()
         try {
             val dataArray = JSONArray(response)
+
             for (i in 0 until dataArray.length()) {
                 val usersModel = Garage_Model()
                 val dataobj = dataArray.getJSONObject(i)
                 usersModel.setAddresses(dataobj.getString("address"))
                 usersModel.setIds(dataobj.getString("id"))
                 usersModel.setNames(dataobj.getString("name"))
-
                 usersModel.setSpotss(dataobj.getString("spots"))
+
 
                 userModelArrayList.add(usersModel)
             }
@@ -151,7 +144,7 @@ val user_id = args?.getString("position","position").toString()
 
 private fun fetchdetails(user_id:String) {
 
-println(user_id)
+
     var client = OkHttpClient()
     var request = OkHttpRequest(client)
     val URL1 = "https://park-ut.appspot.com/details?user_id=$user_id"
@@ -160,13 +153,10 @@ println(user_id)
 
         override fun onResponse(call: Call?, response: Response) {
             val responseData = response.body()?.string()
-val status = response.code()
+            val status = response.code()
             var json = JSONArray(responseData)
-//                            println("Request Successful!!")
-//                            println(json)
-            // val responseObject = json.getJSONObject("response")
-//            for (i in 0..(json.length() - 1)) {
-   //(activity as NavigationHost).navigateTo(RegisterFragment(), false)
+
+
         }
 
         override fun onFailure(call: Call?, e: IOException?) {
@@ -177,7 +167,6 @@ val status = response.code()
 
     //private fun runOnUiThread(functionset: () -> Unit) {
 }
-
 
     private fun reserve()
     {
@@ -193,7 +182,7 @@ val status = response.code()
                 map,
                 object : Callback {
                     override fun onResponse(call: Call?, response: Response) {
-
+//
                     }
 
 
@@ -254,7 +243,9 @@ val status = response.code()
 
     }
 
-
+    fun Any.toast(context: Context, duration: Int = Toast.LENGTH_LONG): Toast {
+        return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
 
 
 

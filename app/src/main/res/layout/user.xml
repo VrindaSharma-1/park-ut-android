@@ -8,7 +8,7 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#DED3C0"
+            android:background="#ccd1d1"
             android:orientation="vertical">
 
         <TextView
@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#000"
                 android:gravity="center_vertical"
+
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:paddingLeft="10dp"
                 android:text="Address" />
@@ -38,6 +39,7 @@
             android:gravity="center_vertical"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:paddingLeft="10dp"
+
             android:text="Id" />
         <TextView
             android:id="@+id/spots"
