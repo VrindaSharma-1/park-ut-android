@@ -49,6 +49,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Occupy" />
+    <Button
+        android:id="@+id/checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Checkout" />
+
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout" />
 
     <ListView
             android:layout_width="match_parent"

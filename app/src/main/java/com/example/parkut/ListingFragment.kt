@@ -70,7 +70,18 @@ val user_id = args?.getString("position","position").toString()
             // (activity as NavigationHost).navigateTo(RegisterFragment(), false)
 
         }
+        view.logout.setOnClickListener{
 
+
+            // Navigate to the next Fragment.
+            (activity as NavigationHost).navigateTo(LoginFragment(), false)
+
+        }
+        view.checkout.setOnClickListener{
+
+            doAsync {  checkout() }
+
+        }
         view.done.setOnClickListener {
             userlist = view.userlist
             var jsonResponse = loadJSONFromAssets()
@@ -208,10 +219,12 @@ val status = response.code()
     }
     private fun occupy()
     {
+        val args=arguments
+        val user_id = args?.getString("position","position").toString()
         val client = OkHttpClient()
         val request = OkHttpRequest(client)
-        val map: HashMap<String, String> = hashMapOf("user_id" to "1")
-        val url = "https://park-ut.appspot.com/occupy/?user_id=1"
+        val map: HashMap<String, String> = hashMapOf("user_id" to "$user_id")
+        val url = "https://park-ut.appspot.com/occupy?user_id=$user_id"
         val post = request.POST(
                 url,
                 map,
@@ -245,7 +258,48 @@ val status = response.code()
 
 
 
+
+private fun checkout()
+{
+    val args=arguments
+    val user_id = args?.getString("position","position").toString()
+    val client = OkHttpClient()
+    val request = OkHttpRequest(client)
+    val map: HashMap<String, String> = hashMapOf("user_id" to "$user_id")
+    val url = "https://park-ut.appspot.com/clear?user_id=$user_id"
+    val post = request.POST(
+            url,
+            map,
+            object : Callback {
+                override fun onResponse(call: Call?, response: Response) {
+
+                    //(activity as NavigationHost).navigateTo(LogoutFragment(), false)
+
+                }
+
+                override fun onFailure(call: Call?, e: IOException?) {
+                    println("Request Failure.")
+                }
+            })
+
+    fun fetchComplete() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    fun runOnUiThread(function: () -> Unit) {
+
+    }
+
+    fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
+
+    }
+
 }
 
+
+
+
+
+}
 
 
