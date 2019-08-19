@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.listing_fragment.*
 import kotlinx.android.synthetic.main.listing_fragment.view.*
 import kotlinx.android.synthetic.main.user.*
+import kotlinx.android.synthetic.main.user.view.*
 import okhttp3.*
 import org.jetbrains.anko.AnkoAsyncContext
 import org.jetbrains.anko.doAsync
@@ -140,9 +141,6 @@ private fun fetchdetails(user_id:String) {
                     override fun onResponse(call: Call?, response: Response) {
 
                     }
-
-
-
                     override fun onFailure(call: Call?, e: IOException?) {
                         println("Request Failure.")
                     }
@@ -187,9 +185,7 @@ private fun checkout()
             map,
             object : Callback {
                 override fun onResponse(call: Call?, response: Response) {
-
                 }
-
                 override fun onFailure(call: Call?, e: IOException?) {
                     println("Request Failure.")
                 }

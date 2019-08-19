@@ -1,11 +1,13 @@
 package com.example.parkut
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.login_fragment.*
@@ -37,8 +39,8 @@ class LoginFragment() : Fragment() {
             {
                 doAsync {
                     fetchpost()
-
                 }
+
             }
 
 
@@ -77,13 +79,6 @@ class LoginFragment() : Fragment() {
         return text != null && text.length >= 1
     }
 
-    private fun isPasswordValidWeb(text: Editable?): Boolean {
-        //CHECK AGAINST AUTHORIZATION OF SERVICE TO SEE IF CREDENTIALS ARE CORRECT
-
-        return true
-
-    }
-
     private fun fetchpost()
     {
         val email = email_text.text
@@ -97,14 +92,16 @@ class LoginFragment() : Fragment() {
                 map,
                 object : Callback {
                     override fun onResponse(call: Call?, response: Response) {
-                        val responseData = response.body()?.string()
-                        val jsonarray = JSONObject(responseData)
-                        val user_id = jsonarray.get("id").toString()
-                        if(jsonarray.get("email")=="$email")
-                        {(activity as NavigationHost).navigateTo(ListingFragment.newInstance(user_id), false)}
+                        val responseData = response.body().string()
+                        if (response.code() == 401)
+                           (activity as NavigationHost).navigateTo(LoginFragment(), false)
+                        else {
+                            val jsonarray = JSONObject(responseData)
+                            val user_id = jsonarray.get("id").toString()
+                            (activity as NavigationHost).navigateTo(ListingFragment.newInstance(user_id), false)
 
+                        }
                     }
-
                     override fun onFailure(call: Call?, e: IOException?) {
                         println("Request Failure.")
                     }
@@ -127,6 +124,9 @@ class LoginFragment() : Fragment() {
     private fun runOnUiThread(function: () -> Unit) {
 
     }
+}
+fun Any.toast(context: Context, duration: Int = Toast.LENGTH_SHORT): Toast {
+    return Toast.makeText(context, this.toString(), duration).apply { show() }
 }
 
 private fun LoginFragment.fetchComplete() {
