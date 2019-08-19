@@ -53,9 +53,9 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
             // the getTag returns the viewHolder object set as a tag to the view
             holder = convertView.tag as ViewHolder
         }
-        holder.address!!.text = "Address :" + usersModelArrayList[position].getAddresses()
-        holder.id!!.text = "Garage Id :" + usersModelArrayList[position].getIds()
-        holder.name!!.text ="Garage Name :" +usersModelArrayList[position].getNames()
+        holder.address!!.text = usersModelArrayList[position].getAddresses()
+        holder.id!!.text = "Id - " + usersModelArrayList[position].getIds()
+        holder.name!!.text = usersModelArrayList[position].getNames()
 
         //holder.spot!!.text ="Spots :"+  usersModelArrayList[position].getSpotss()
         return convertView

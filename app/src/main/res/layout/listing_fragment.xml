@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/colorAccent"
-              android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
 
     <Button
-            android:text="Show Garages"
-            android:textAlignment="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/done"
-
-
-            android:background="@color/colorAccent"
-    />
-
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:ellipsize="middle"
+        android:text="Show Garages"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textAlignment="center" />
 
 
     <EditText
@@ -25,10 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textAlignment="center"
-
+        android:hint="@string/hint_garage_id"
+        android:layout_gravity="center_vertical|center_horizontal"
         android:inputType="number"
-        android:hint = "@string/hint_garage_id"/>
+        android:textAlignment="center" />
 
 
     <Button
@@ -36,25 +34,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F4A460"
-        android:textAlignment="center"
         android:outlineAmbientShadowColor="@color/cardview_dark_background"
-        android:text="Reserve" />
+        android:text="Reserve"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/occupy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F4A460"
-        android:textAlignment="center"
-        android:text="Occupy" />
+        android:text="Occupy"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textAlignment="center" />
+
     <Button
         android:id="@+id/checkout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F4A460"
-        android:textAlignment="center"
-
-        android:text="Checkout" />
+        android:text="Checkout"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textAlignment="center" />
 
 
     <Button
@@ -62,13 +63,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F4A460"
-        android:textAlignment="center"
-        android:text="Logout" />
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:text="Logout"
+        android:textAlignment="center" />
 
     <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/userlist"
+        android:id="@+id/userlist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
 
         />

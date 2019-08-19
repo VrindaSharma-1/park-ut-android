@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:hint="@string/hint_username"
+                android:hint="@string/hint_email"
                 android:layout_alignParentStart="true">
 
             <com.google.android.material.textfield.TextInputEditText
