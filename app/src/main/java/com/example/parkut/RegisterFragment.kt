@@ -22,31 +22,13 @@ import android.widget.Toast
 import okhttp3.*
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [HomeFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    //private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -76,7 +58,7 @@ class RegisterFragment : Fragment() {
 
         }
         view.back_to_login.setOnClickListener{
-            // Navigate to the Registration Fragment.
+            // Navigate to the Login Fragment.
             (activity as NavigationHost).navigateTo(LoginFragment(), false)
 
         }
@@ -102,7 +84,7 @@ class RegisterFragment : Fragment() {
         val json = """
 {"name":"$name", "email":"$email", "password":"$password", "passwordDuplicate":"$password_conf"}
 """.trimIndent()
-        println(json)
+
         val body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
         val request = Request.Builder()
                 .url(url)
@@ -110,20 +92,10 @@ class RegisterFragment : Fragment() {
                 .build()
         val response = client.newCall(request).execute()
         val jsonString = response?.body()?.string()
-        println(jsonString)
+
         val result = JSONObject(jsonString)
 
-        fun fetchComplete() {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
 
-        fun runOnUiThread(function: () -> Unit) {
-
-        }
-
-        fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
-
-        }
 
     }
 }

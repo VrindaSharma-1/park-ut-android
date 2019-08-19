@@ -1,11 +1,3 @@
-// The purpose of this example is to show
-// a. Fragments
-// b. How to navigate from one Fragment to another
-// c. How to use a Custom
-// The Main Activity simply launches the LoginFragment
-// The LoginFragement does its thing and navigates to
-// the ListingFragment which lists the contents of a JSON Array
-
 package com.example.parkut
 
 import android.os.Bundle
@@ -32,12 +24,7 @@ class MainActivity : AppCompatActivity(), NavigationHost,FetchCompleteListener{
 
     }
 
-    /**
-     * Navigate to the given fragment.
-     *
-     * @param fragment       Fragment to navigate to.
-     * @param addToBackstack Whether or not the current fragment should be added to the backstack.
-     */
+
     override fun navigateTo(fragment: Fragment, addToBackstack: Boolean) {
         val transaction = supportFragmentManager
             .beginTransaction()
