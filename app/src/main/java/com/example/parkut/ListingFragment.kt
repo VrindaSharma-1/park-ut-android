@@ -44,6 +44,7 @@ class ListingFragment : Fragment() {
 
         val args=arguments
         val user_id = args?.getString("position","position").toString()
+
         doAsync {
             fetchdetails(user_id)
         }
@@ -70,8 +71,8 @@ class ListingFragment : Fragment() {
         }
         view.done.setOnClickListener {
             userlist = view.userlist
-            var jsonResponse = loadJSONFromAssets()
-            userModelArrayList = getInfo(jsonResponse!!)
+          //  var jsonResponse = loadJSONFromAssets()
+          //  userModelArrayList = getInfo(jsonResponse!!)
 
             // Create a Custom Adapter that gives us a way to "view" each user in the ArrayList
             customAdapter = CustomAdapter(view.context, userModelArrayList!!)
@@ -141,7 +142,7 @@ private fun fetchdetails(user_id:String) {
             val status = response.code()
             var json = JSONArray(responseData)
 
-
+            userModelArrayList = getInfo(json.toString())
         }
         override fun onFailure(call: Call?, e: IOException?) {
             println("Request Failure.")
