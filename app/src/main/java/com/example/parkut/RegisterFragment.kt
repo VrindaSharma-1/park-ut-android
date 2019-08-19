@@ -16,6 +16,9 @@ import org.jetbrains.anko.doAsync
 import org.json.JSONObject
 import java.io.IOException
 import android.R.attr.data
+import android.content.Context
+import android.text.Editable
+import android.widget.Toast
 import okhttp3.*
 
 
@@ -53,11 +56,18 @@ class RegisterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.register_fragment, container, false)
-        view.add_user.setOnClickListener{
-doAsync { fetchregister() }
-            // Navigate to the next Fragment.
-           // (activity as NavigationHost).navigateTo(LoginFragment(), false)
-
+        view.add_user.setOnClickListener {
+            if (!isPasswordValid(password_register_text.text!!,password_confirm_text_register.text!!))
+            {
+                password_confirm_text_register.error = getString(R.string.error_conf)
+                context?.let { it1 -> "Please enter correct password".toast(it1) }
+            }
+            else
+            {
+                doAsync { fetchregister() }
+                context?.let { it1 -> "Registration Successful!".toast(it1) }
+               (activity as NavigationHost).navigateTo(LoginFragment(), false)
+            }
         }
 
         view.cancel_button_r.setOnClickListener{
@@ -72,6 +82,13 @@ doAsync { fetchregister() }
         }
         return view
     }
+    private fun isPasswordValid(text: Editable?,text1: Editable?): Boolean {
+        return text != null && text.isNotEmpty() && text.toString().equals(text1.toString())
+    }
+
+    fun Any.toast(context: Context, duration: Int = Toast.LENGTH_LONG): Toast {
+        return Toast.makeText(context, this.toString(), duration).apply { show() }
+    }
 
     private fun fetchregister()
     {
@@ -80,28 +97,21 @@ doAsync { fetchregister() }
         val password_conf = password_confirm_text_register.text
         val name = name_register_text.text
         val client = OkHttpClient()
-        val request = OkHttpRequest(client)
-       // val map: HashMap<String, String> = hashMapOf("email" to "$email", "password" to "$password")
-       //val json = mutableMapOf("name" to "$name", "email" to "$email","password" to "$password", "passwordDuplicate" to "$password_conf")
+
         val url = "https://park-ut.appspot.com/signup"
-        val str = """
+        val json = """
 {"name":"$name", "email":"$email", "password":"$password", "passwordDuplicate":"$password_conf"}
 """.trimIndent()
-//val str =JSONObject(json)
-        val post = request.POSTR(url, str, object : Callback {
-                    override fun onResponse(call: Call?, response: Response) {
-                        val responseData = response.body()?.string()
-                        val jsonobj = JSONObject(responseData)
-
-                        if(jsonobj.get("result")==true)
-                        {(activity as NavigationHost).navigateTo(LoginFragment(), false)}
-
-                    }
-
-                    override fun onFailure(call: Call?, e: IOException?) {
-                        println("Request Failure.")
-                    }
-                })
+        println(json)
+        val body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json)
+        val request = Request.Builder()
+                .url(url)
+                .post(body)
+                .build()
+        val response = client.newCall(request).execute()
+        val jsonString = response?.body()?.string()
+        println(jsonString)
+        val result = JSONObject(jsonString)
 
         fun fetchComplete() {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

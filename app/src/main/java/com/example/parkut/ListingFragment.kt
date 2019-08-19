@@ -166,7 +166,7 @@ private fun fetchdetails(user_id:String) {
                 map,
                 object : Callback {
                     override fun onResponse(call: Call?, response: Response) {
-//
+
                     }
 
 

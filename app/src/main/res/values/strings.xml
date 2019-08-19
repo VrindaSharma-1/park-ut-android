@@ -8,6 +8,7 @@
     <string name="add_user">Register</string>
     <string name="button_cancel">Cancel</string>
 
+    <string name="error_conf">Passwords do not match! Please Re-enter the correct password!</string>
     <string name="hint_garage_id">Enter Garage Id to reserve a Spot</string>
     <string name="error_password">Password must contain at least 1 character.</string>
 

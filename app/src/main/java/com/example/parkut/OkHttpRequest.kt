@@ -38,11 +38,12 @@ class OkHttpRequest(client: OkHttpClient) {
         call.enqueue(callback)
         return call
     }
-    //val JSON = MediaType.parse("application/json; charset=utf-8")
+   // val JSON = MediaType.parse("application/json; charset=utf-8")
     fun POSTR(url: String, parameters: String, callback: Callback): Call {
 
 
         val body = RequestBody.create(MediaType.parse(parameters),parameters)
+
         val request = Request.Builder()
                 .url(url)
                 .post(body)
