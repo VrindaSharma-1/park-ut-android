@@ -23,8 +23,6 @@ import java.util.*
 
 class ListingFragment : Fragment() {
 
-
-
     private var userlist: ListView? = null
     private var userModelArrayList: ArrayList<Garage_Model>? = null
     private var customAdapter: CustomAdapter? = null
@@ -33,16 +31,14 @@ class ListingFragment : Fragment() {
         fun newInstance(position: String):ListingFragment {
             val fragment = ListingFragment()
             val args = Bundle()
-           var user_id = args.putString("position", position)
+            var user_id = args.putString("position", position)
             fragment.setArguments(args)
             return fragment
         }
     }
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
+
         val view =  inflater.inflate(R.layout.listing_fragment, container, false)
         userlist = view.userlist
 
@@ -50,7 +46,6 @@ class ListingFragment : Fragment() {
         val user_id = args?.getString("position","position").toString()
         doAsync {
             fetchdetails(user_id)
-
         }
 
         view.reserve.setOnClickListener{
@@ -58,7 +53,6 @@ class ListingFragment : Fragment() {
             val g_id= garage_id.text
                     context?.let { it1 -> "Reserved spot at Garage - $g_id ".toast(it1) }
         }
-
         view.occupy.setOnClickListener{
             doAsync {  occupy()}
             val g_id= garage_id.text
@@ -83,14 +77,8 @@ class ListingFragment : Fragment() {
             customAdapter = CustomAdapter(view.context, userModelArrayList!!)
             // set the custom adapter for the userlist viewing
             userlist!!.adapter = customAdapter
-
-
         }
         return view;
-
-
-
-
     }
 
     private fun getInfo(response: String): ArrayList<Garage_Model> {
@@ -104,7 +92,7 @@ class ListingFragment : Fragment() {
                 usersModel.setAddresses(dataobj.getString("address"))
                 usersModel.setIds(dataobj.getString("id"))
                 usersModel.setNames(dataobj.getString("name"))
-                usersModel.setSpotss(dataobj.getString("spots"))
+               // usersModel.setSpotss(dataobj.getString("spots"))
 
 
                 userModelArrayList.add(usersModel)
@@ -124,7 +112,6 @@ class ListingFragment : Fragment() {
 
     }
 
-
     fun loadJSONFromAssets(): String? {
         var json: String? = null
         try {
@@ -143,8 +130,6 @@ class ListingFragment : Fragment() {
     }
 
 private fun fetchdetails(user_id:String) {
-
-
     var client = OkHttpClient()
     var request = OkHttpRequest(client)
     val URL1 = "https://park-ut.appspot.com/details?user_id=$user_id"
@@ -158,7 +143,6 @@ private fun fetchdetails(user_id:String) {
 
 
         }
-
         override fun onFailure(call: Call?, e: IOException?) {
             println("Request Failure.")
         }
@@ -191,8 +175,6 @@ private fun fetchdetails(user_id:String) {
                         println("Request Failure.")
                     }
                 })
-
-     //  (activity as NavigationHost).navigateTo(OccupyFragment(), false)
         fun fetchComplete() {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
@@ -202,9 +184,7 @@ private fun fetchdetails(user_id:String) {
         }
 
         fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
-
         }
-
     }
     private fun occupy()
     {
@@ -219,11 +199,7 @@ private fun fetchdetails(user_id:String) {
                 map,
                 object : Callback {
                     override fun onResponse(call: Call?, response: Response) {
-
-                        //(activity as NavigationHost).navigateTo(LogoutFragment(), false)
-
                     }
-
                     override fun onFailure(call: Call?, e: IOException?) {
                         println("Request Failure.")
                     }

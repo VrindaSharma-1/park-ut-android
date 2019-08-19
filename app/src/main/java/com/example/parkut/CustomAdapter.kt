@@ -46,7 +46,7 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
             holder.id = convertView!!.findViewById(R.id.id) as TextView
             holder.name = convertView!!.findViewById(R.id.name) as TextView
 
-            holder.spot = convertView.findViewById(R.id.spots) as TextView
+         //   holder.spot = convertView.findViewById(R.id.spots) as TextView
 
             convertView.tag = holder
         } else {
@@ -57,7 +57,7 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
         holder.id!!.text = "Garage Id :" + usersModelArrayList[position].getIds()
         holder.name!!.text ="Garage Name :" +usersModelArrayList[position].getNames()
 
-        holder.spot!!.text ="Spots :"+  usersModelArrayList[position].getSpotss()
+        //holder.spot!!.text ="Spots :"+  usersModelArrayList[position].getSpotss()
         return convertView
     }
 
@@ -66,7 +66,7 @@ class CustomAdapter(private val context: Context, private val usersModelArrayLis
         var name: TextView? = null
         var address: TextView? = null
         var id: TextView? = null
-        var spot: TextView? = null
+       // var spot: TextView? = null
     }
 
 }
