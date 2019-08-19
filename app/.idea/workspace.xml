@@ -97,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="329">
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
             </state>
           </provider>
         </entry>
@@ -284,7 +284,7 @@
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Pixel_2_API_23" />
+    <property name="device.picker.selection" value="Button_API_25" />
     <property name="last_opened_file_path" value="C:/ProgramData/Microsoft/Windows/Start Menu/Programs/Android Studio/Android Studio.lnk" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Dependencies" />
@@ -401,7 +401,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.50476193" side_tool="true" weight="0.25182188" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4952381" visible="true" weight="0.25101215" />
@@ -415,7 +414,7 @@
       <window_info anchor="bottom" id="Run" order="0" sideWeight="0.7093117" weight="0.21847247" />
       <window_info anchor="bottom" id="Logcat" order="1" sideWeight="0.49959514" weight="0.294849" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3285968" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49473685" visible="true" weight="0.46181172" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49473685" weight="0.28241563" />
       <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49959514" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5044534" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3285968" />
@@ -536,25 +535,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>81</line>
+          <line>79</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>200</line>
+          <line>162</line>
           <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>196</line>
+          <line>158</line>
           <properties />
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>195</line>
+          <line>157</line>
           <properties />
           <option name="timeStamp" value="151" />
         </line-breakpoint>
@@ -649,24 +648,6 @@
           <line>86</line>
           <properties />
           <option name="timeStamp" value="208" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>73</line>
-          <properties />
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt</url>
-          <line>142</line>
-          <properties />
-          <option name="timeStamp" value="212" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -933,8 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/parkut/ListingFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="329">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
         </state>
       </provider>
     </entry>

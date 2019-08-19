@@ -71,8 +71,6 @@ class ListingFragment : Fragment() {
         }
         view.done.setOnClickListener {
             userlist = view.userlist
-          //  var jsonResponse = loadJSONFromAssets()
-          //  userModelArrayList = getInfo(jsonResponse!!)
 
             // Create a Custom Adapter that gives us a way to "view" each user in the ArrayList
             customAdapter = CustomAdapter(view.context, userModelArrayList!!)
@@ -105,31 +103,6 @@ class ListingFragment : Fragment() {
         return userModelArrayList
     }
 
-    private fun fetchComplete() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    private fun activityUiThread(function: () -> Unit) {
-
-    }
-
-    fun loadJSONFromAssets(): String? {
-        var json: String? = null
-        try {
-            val inputStream = this.context?.assets?.open("garages.json")
-            val size = inputStream?.available()
-            val buffer = ByteArray(size!!)
-            inputStream.read(buffer)
-            inputStream.close()
-
-            json = String(buffer, Charsets.UTF_8)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-
-        return json
-    }
-
 private fun fetchdetails(user_id:String) {
     var client = OkHttpClient()
     var request = OkHttpRequest(client)
@@ -149,8 +122,6 @@ private fun fetchdetails(user_id:String) {
         }
 
     })
-
-    //private fun runOnUiThread(functionset: () -> Unit) {
 }
 
     private fun reserve()
@@ -176,16 +147,7 @@ private fun fetchdetails(user_id:String) {
                         println("Request Failure.")
                     }
                 })
-        fun fetchComplete() {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
 
-        fun runOnUiThread(function: () -> Unit) {
-
-        }
-
-        fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
-        }
     }
     private fun occupy()
     {
@@ -206,26 +168,11 @@ private fun fetchdetails(user_id:String) {
                     }
                 })
 
-        fun fetchComplete() {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        fun runOnUiThread(function: () -> Unit) {
-
-        }
-
-        fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
-
-        }
-
     }
 
     fun Any.toast(context: Context, duration: Int = Toast.LENGTH_LONG): Toast {
         return Toast.makeText(context, this.toString(), duration).apply { show() }
     }
-
-
-
 
 private fun checkout()
 {
@@ -241,33 +188,13 @@ private fun checkout()
             object : Callback {
                 override fun onResponse(call: Call?, response: Response) {
 
-                    //(activity as NavigationHost).navigateTo(LogoutFragment(), false)
-
                 }
 
                 override fun onFailure(call: Call?, e: IOException?) {
                     println("Request Failure.")
                 }
             })
-
-    fun fetchComplete() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    fun runOnUiThread(function: () -> Unit) {
-
-    }
-
-    fun <T> AnkoAsyncContext<T>.activityUiThread(function: () -> Unit) {
-
-    }
-
 }
-
-
-
-
-
 }
 
 
